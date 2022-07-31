@@ -11,13 +11,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     test.posX     = 300;
     test.posY     = 300;
-    test.scaleX   = 10;
-    test.scaleY   = 10;
+    test.scaleX   = 60;
+    test.scaleY   = 20;
     test.rotation = 0;
 
-    this->setAutoFillBackground(true);
-
-    timerId = startTimer(100);
+    timerId = startTimer(10);
 }
 
 MainWindow::~MainWindow()
@@ -32,9 +30,8 @@ void MainWindow::paintEvent(QPaintEvent *e)
     //Тут надо почистить окно
 
     qp.setRenderHint(QPainter::Antialiasing);
-    qp.fillRect(e->rect(), QBrush(Qt::white));
 
-    test.rotation = test.rotation + 1;
+    test.rotation = test.rotation + 2;
 
     test.draw(&qp);
 }

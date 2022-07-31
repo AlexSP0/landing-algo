@@ -79,6 +79,7 @@ void GraphicalObject::createRotationMatrix()
 
 void GraphicalObject::calculateTransVertices()
 {
+    transVertices.clear();
     createTranslationMatrix();
     createScaleMatrix();
     createRotationMatrix();
