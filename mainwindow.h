@@ -3,8 +3,13 @@
 
 #include <QMainWindow>
 
+#include <graphicobjects/testfigure.h>
+
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui
+{
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -17,5 +22,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    TestFigure test;
+
+    int timerId;
+
+    bool clearFlag;
+
+protected:
+    void paintEvent(QPaintEvent *);
+    void timerEvent(QTimerEvent *);
 };
 #endif // MAINWINDOW_H
