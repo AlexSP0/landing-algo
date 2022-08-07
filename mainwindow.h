@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "gamewindow.h"
+
 #include <QMainWindow>
 
 #include <graphicobjects/testfigure.h>
@@ -22,11 +24,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    TestFigure test;
 
-    int timerId;
-
-    bool clearFlag;
+    GameWindow *window;
 
 protected:
     void paintEvent(QPaintEvent *);

@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(landing-algo VERSION 0.1 LANGUAGES CXX)
 
 add_subdirectory(graphicobjects)
+add_subdirectory(gameobjects)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -24,9 +25,11 @@ set(PROJECT_SOURCES
         gamewindow.h
         gamewindow.cpp
         gamewindow.ui
+        constants.h
 )
 
 add_executable(landing-algo ${PROJECT_SOURCES})
 
 target_link_libraries(landing-algo PRIVATE Qt5::Widgets Qt5::Core)
 target_link_libraries(landing-algo PRIVATE graphicobjects)
+target_link_libraries(landing-algo PRIVATE gameobjects)

@@ -34,6 +34,8 @@ public:
 
     void draw(QPainter *);
 
+    void calculateTransVertices();
+
 private:
     std::vector<Point> transVertices;
     std::vector<MatrixEntry> identityMatrix;
@@ -45,8 +47,6 @@ private:
     void createTranslationMatrix();
     void createScaleMatrix();
     void createRotationMatrix();
-
-    void calculateTransVertices();
 
     void multipleMatrix(MatrixEntry &, const MatrixEntry &, const std::vector<MatrixEntry> &);
 };

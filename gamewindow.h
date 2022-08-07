@@ -1,7 +1,11 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include <QElapsedTimer>
 #include <QWidget>
+
+#include "constants.h"
+#include "gameobjects/lander.h"
 
 namespace Ui
 {
@@ -19,11 +23,18 @@ public:
 private:
     Ui::GameWindow *ui;
 
+    Lander *lander;
+
     int timerId;
+
+    QElapsedTimer *eTimer;
+    long currentTime;
+    ACTIONS currentAction;
 
 protected:
     void paintEvent(QPaintEvent *);
     void timerEvent(QTimerEvent *);
+    void keyPressEvent(QKeyEvent *);
 };
 
 #endif // GAMEWINDOW_H

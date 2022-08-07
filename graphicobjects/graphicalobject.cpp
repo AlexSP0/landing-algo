@@ -68,13 +68,12 @@ void GraphicalObject::createScaleMatrix()
 void GraphicalObject::createRotationMatrix()
 {
     rotationMatrix.clear();
-    double angleInRadians = rotation * 0.017453;
 
     std::copy(identityMatrix.begin(), identityMatrix.end(), std::back_inserter(rotationMatrix));
-    rotationMatrix[0].x = cos(angleInRadians);
-    rotationMatrix[0].y = sin(angleInRadians);
-    rotationMatrix[1].x = -1 * sin(angleInRadians);
-    rotationMatrix[1].y = cos(angleInRadians);
+    rotationMatrix[0].x = cos(rotation);
+    rotationMatrix[0].y = sin(rotation);
+    rotationMatrix[1].x = -1 * sin(rotation);
+    rotationMatrix[1].y = cos(rotation);
 }
 
 void GraphicalObject::calculateTransVertices()
