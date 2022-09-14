@@ -4,6 +4,7 @@ project(landing-algo VERSION 0.1 LANGUAGES CXX)
 
 add_subdirectory(graphicobjects)
 add_subdirectory(gameobjects)
+add_subdirectory(neuronet)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
