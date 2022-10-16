@@ -4,6 +4,7 @@ set(SOURCES
     sneuron.cpp
     sneuronlayer.cpp
     sneuralnet.cpp
+    nlink.h
 )
 set(HEADERS
     sneuron.h

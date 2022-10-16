@@ -5,10 +5,16 @@
 
 #include <vector>
 
+namespace neuro
+{
 class SNeuralNet
 {
 public:
-    SNeuralNet(int numInputs, int numOutputs, int hiddenLayers, int hiddenNeurons);
+    SNeuralNet(int numInputs,
+               int numOutputs,
+               int numNeuronsByFirstLayer,
+               int hiddenLayers,
+               int hiddenNeurons);
 
     std::vector<double> getAllWeights() const;
 
@@ -25,12 +31,22 @@ private:
 
     int m_NeuronsByHiddenLayers;
 
+    int m_NumNeuronsByFirstLayer;
+
     std::vector<SNeuronLayer> m_layers;
 
-private:
-    void CreateNet();
+    std::vector<NLink> m_Links;
 
-    inline double sigmoid(double activation, double response);
+private:
+    inline double sigmoid(double activation);
+
+    void createFirstLayer();
+
+    void createHiddenLayers();
+
+    void createLastLayer();
 };
+
+} // namespace neuro
 
 #endif // SNEURALNET_H

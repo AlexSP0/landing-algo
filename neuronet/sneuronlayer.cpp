@@ -1,6 +1,11 @@
 #include "sneuronlayer.h"
 
-SNeuronLayer::SNeuronLayer()
+namespace neuro
 {
+SNeuronLayer::SNeuronLayer(int numInputs)
+    : m_numInputs(numInputs)
+{}
 
-}
+void SNeuronLayer::updateLayer() {}
+
+} // namespace neuro

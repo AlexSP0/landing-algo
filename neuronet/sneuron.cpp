@@ -2,19 +2,11 @@
 
 #include <QRandomGenerator>
 
-SNeuron::SNeuron(int numInputs)
+namespace neuro
 {
-    for (size_t i = 0; i < numInputs; i++)
-    {
-        double value = QRandomGenerator::global()->generateDouble();
-        double sign  = QRandomGenerator::global()->generateDouble();
-        if (sign > 0.5)
-        {
-            value = value * (-1);
-        }
-        m_Inputs_Weights.push_back(value);
-    }
+SNeuron::SNeuron(int numInputs, double curvature)
+    : m_numInputs(numInputs)
+    , m_activationResponse(curvature)
+{}
 
-    //double bias = QRandomGenerator::global()->generateDouble();
-    m_Inputs_Weights.push_back(-1); //the bias value
-}
+} // namespace neuro
