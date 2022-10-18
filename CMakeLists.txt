@@ -23,10 +23,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        gamewindow.h
-        gamewindow.cpp
+        gamewindow.h gamewindow.cpp
         gamewindow.ui
-        constants.h
 )
 
 add_executable(landing-algo ${PROJECT_SOURCES})

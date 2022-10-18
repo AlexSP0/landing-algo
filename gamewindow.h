@@ -4,7 +4,7 @@
 #include <QElapsedTimer>
 #include <QWidget>
 
-#include "constants.h"
+#include "gameobjects/constants.h"
 #include "gameobjects/lander.h"
 
 namespace Ui

@@ -12,7 +12,20 @@ Vector2D::Vector2D(const Vector2D &other)
     y = other.y;
 }
 
+Vector2D::Vector2D(Vector2D &&other)
+{
+    x = other.x;
+    y = other.y;
+}
+
 Vector2D &Vector2D::operator=(const Vector2D &other)
+{
+    x = other.x;
+    y = other.y;
+    return *this;
+}
+
+Vector2D &Vector2D::operator=(Vector2D &&other)
 {
     x = other.x;
     y = other.y;

@@ -13,9 +13,12 @@ GameWindow::GameWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    resize(600, 600);
+    resize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
 
-    lander = new Lander(width(), height(), *new Vector2D(300, 300), *new Vector2D(100, 0));
+    lander = new Lander(WINDOW_SIZE_X,
+                        WINDOW_SIZE_Y,
+                        *new Vector2D(300, 300),
+                        *new LandingPad(100, 130, 0));
 
     eTimer = new QElapsedTimer();
 

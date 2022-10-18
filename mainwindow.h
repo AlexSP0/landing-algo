@@ -7,6 +7,8 @@
 
 #include <graphicobjects/testfigure.h>
 
+#include <gameobjects/genecontroller.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
@@ -27,8 +29,30 @@ private:
 
     GameWindow *window;
 
+    GeneController *controller;
+
+    QTimer *timer;
+
+    int currentEpoch;
+
+    int currentGeneration;
+
+private:
+    void updateResults(std::vector<GenerationResult> &results);
+
+    void updateStats(int epoch, int generation, int numLander);
+
+    double getEpochTotalFitness(int epoch, std::vector<GenerationResult> &results);
+
+    double getEpochBestFitness(int epoch, std::vector<GenerationResult> &results);
+
 protected:
     void paintEvent(QPaintEvent *);
     void timerEvent(QTimerEvent *);
+private slots:
+    void on_startButton_clicked();
+    void on_stopButton_clicked();
+    void tick();
+    void onEpochChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
 };
 #endif // MAINWINDOW_H
